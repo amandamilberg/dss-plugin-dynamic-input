@@ -1,0 +1,126 @@
+// This file is the descriptor for the Custom code recipe no-sql-join-and-keep
+{
+    // Meta data for display purposes
+    "meta": {
+        // label: name of the recipe as displayed, should be short
+        "label": "Join and keep unmatched : Non-SQL Datasets",
+        // description: longer string to help end users understand what this recipe does
+        "description": "Join two datasets together and output the inner join, the left unmatched, and right unmatched datasets.",
+        // icon: must be one of the FontAwesome 3.2.1 icons, complete list here at https://fontawesome.com/v3.2.1/icons/
+        "icon": "icon-visual_prep_join_recipe"
+    },
+
+    "kind": "PYTHON",
+    "selectableFromDataset": "left_dataset",
+    
+
+    // Inputs and outputs are defined by roles. In the recipe's I/O tab, the user can associate one
+    // or more dataset to each input and output role.
+
+    // The "arity" field indicates whether the user can associate several datasets to the role ('NARY')
+    // or at most one ('UNARY'). The "required" field indicates whether the user is allowed to
+    // associate no dataset with the role.
+
+    "inputRoles": [
+        {
+            "name": "left_dataset",
+            "label": "Left Dataset",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": true
+        },
+        {
+            "name": "right_dataset",
+            "label": "Right Dataset",
+            "arity": "NARY",
+            "required": false,
+            "acceptsDataset": true
+            // ,'mustBeSQL': true
+            // ,'mustBeStrictlyType':'HDFS'
+        }
+        // ...
+    ],
+
+    "outputRoles": [
+        {
+            "name": "inner",
+            "label": "Inner Join",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": true
+        },
+        {
+            "name": "left_unmatched",
+            "label": "Left Unmatched",
+            "description": "Rows from the left dataset that are not in the inner join.",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": true
+        },
+        {
+            "name": "right_unmatched",
+            "label": "Right Unmatched",
+            "description": "Rows from the right dataset that are not in the inner join.",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": true
+        }
+        // ...
+    ],
+
+    /* The field "params" holds a list of all the params
+       for wich the user will be prompted for values in the Settings tab of the recipe.
+
+       The available parameter types include:
+       STRING, STRINGS, INT, DOUBLE, BOOLEAN, SELECT, MULTISELECT, MAP, TEXTAREA, PRESET, COLUMN, COLUMNS
+
+       For the full list and for more details, see the documentation: https://doc.dataiku.com/dss/latest/plugins/reference/params.html
+    */
+
+    "params": [
+        {
+            "label": "Join Conditions",
+            "type": "SEPARATOR"
+        },
+        {
+            "name": "join_keys_1",
+            "label": "Join key from first dataset",
+            "description": "Join key from the first dataset",
+            "type": "COLUMNS",
+            "columnRole": "left_dataset",
+            "mandatory": true
+        },
+        {
+            "name": "join_keys_2",
+            "label": "Join key from second dataset",
+            "description": "Join key from the second dataset",
+            "type": "COLUMNS",
+            "columnRole": "right_dataset",
+            "mandatory": true
+        },
+        {
+            "label": "Output Columns",
+            "type": "SEPARATOR",
+            "description": "Select columns from each input dataset to keep in the output dataset. Leave empty for all."
+        },
+        {
+            "name": "output_cols_1",
+            "label": "Output Column Dataset #1",
+            "description": "Output column from first dataset",
+            "type": "COLUMNS",
+            "columnRole": "left_dataset",
+            "mandatory": false
+        },
+        {
+            "name": "output_cols_2",
+            "label": "Output Column Dataset #2",
+            "description": "Output column from second dataset",
+            "type": "COLUMNS",
+            "columnRole": "right_dataset",
+            "mandatory": false
+        }
+    ],
+
+    "resourceKeys": []
+
+}

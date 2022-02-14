@@ -1,0 +1,94 @@
+{
+    "meta": {
+        "label": "Outer Join : Non-SQL Datasets",
+        "description": "Join two datasets with full outer join for datasts NOT in SQL database",
+        "icon": "icon-visual_prep_join_recipe"
+    },
+
+    "kind": "PYTHON",
+	"selectableFromDataset": "first_dataset",
+
+    "inputRoles": [
+        {
+            "name": "first_dataset",
+            "label": "First Dataset",
+            "description": "First Dataset for Join",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": true,
+			"mustBeSQL": false
+        },
+        {
+            "name": "second_dataset",
+            "label": "Second Dataset",
+            "description": "Second Dataset for Join",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": true,
+            "mustBeSQL": false
+        }
+
+    ],
+
+    "outputRoles": [
+        {
+            "name": "output_dataset",
+            "label": "Output Dataset",
+            "description": "Output Dataset",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": true
+        }
+
+    ],
+
+    "params": [
+		{
+			"label": "Join Conditions",
+			"type": "SEPARATOR"
+		},
+		{
+            "name": "join_keys_1",
+            "label": "Join key from first dataset",
+			"description": "Join key from the first dataset",
+            "type": "COLUMNS",
+			"columnRole": "first_dataset",
+            "mandatory": true
+        },
+        {
+            "name": "join_keys_2",
+            "label": "Join key from second dataset",
+			"description": "Join key from the second dataset",
+            "type": "COLUMNS",
+			"columnRole": "second_dataset",
+            "mandatory": true
+        },
+
+        {
+			"label": "Output Columns",
+			"type": "SEPARATOR",
+			"description": "Select columns from each input dataset to keep in the output dataset. Leave empty for all."
+		},
+		
+        {
+            "name": "output_cols_1",
+            "label": "Output Column Dataset #1",
+			"description": "Output column from first dataset",
+            "type": "COLUMNS",
+			"columnRole": "first_dataset",
+            "mandatory": false
+        },
+		
+		{
+            "name": "output_cols_2",
+            "label": "Output Column Dataset #2",
+			"description": "Output column from second dataset",
+            "type": "COLUMNS",
+			"columnRole": "second_dataset",
+            "mandatory": false
+        }
+    ],
+
+    "resourceKeys": []
+
+}
