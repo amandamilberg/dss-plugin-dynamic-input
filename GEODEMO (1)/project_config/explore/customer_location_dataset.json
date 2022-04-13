@@ -1,0 +1,359 @@
+{
+  "script": {
+    "steps": [],
+    "maxProcessedMemTableBytes": -1,
+    "columnsSelection": {
+      "mode": "ALL"
+    },
+    "columnWidthsByName": {
+      "customer_id": 100,
+      "avg_basket": 148,
+      "last_purchase": 148,
+      "customer_location": 300
+    },
+    "coloring": {
+      "scheme": "MEANING_AND_STATUS",
+      "individualColumns": [],
+      "valueColoringMode": "HASH"
+    },
+    "sorting": [],
+    "analysisColumnData": {},
+    "explorationSampling": {
+      "selection": {
+        "maxStoredBytes": 104857600,
+        "timeout": -1,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 1
+    },
+    "vizSampling": {
+      "selection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "FULL",
+        "maxRecords": -1,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
+    "globalSearchQuery": "",
+    "explorationFilters": [],
+    "previewMode": "ALL_ROWS"
+  },
+  "charts": [
+    {
+      "copySelectionFromScript": true,
+      "engineType": "LINO",
+      "def": {
+        "type": "admin_map",
+        "variant": "filled_map",
+        "name": "New chart",
+        "userEditedName": false,
+        "genericDimension0": [],
+        "genericDimension1": [],
+        "facetDimension": [],
+        "animationDimension": [],
+        "genericMeasures": [],
+        "xDimension": [],
+        "yDimension": [],
+        "uaXDimension": [],
+        "uaYDimension": [],
+        "uaSize": [],
+        "uaShape": [],
+        "uaColor": [],
+        "uaTooltip": [],
+        "groupDimension": [],
+        "xMeasure": [],
+        "yMeasure": [],
+        "colorMeasure": [
+          {
+            "column": "avg_basket",
+            "function": "AVG",
+            "type": "NUMERICAL",
+            "displayed": true,
+            "isA": "measure",
+            "displayAxis": "axis1",
+            "displayType": "column",
+            "computeMode": "NORMAL",
+            "computeModeDim": 0,
+            "multiplier": "Auto"
+          }
+        ],
+        "sizeMeasure": [],
+        "geometry": [
+          {
+            "column": "customer_location",
+            "type": "GEOPOINT",
+            "treatAsAlphanum": false,
+            "isA": "ua",
+            "adminLevel": 8
+          }
+        ],
+        "tooltipMeasures": [],
+        "boxplotBreakdownDim": [],
+        "boxplotValue": [],
+        "filters": [],
+        "axis1LogScale": false,
+        "axis2LogScale": false,
+        "includeZero": true,
+        "smoothing": true,
+        "showLegend": true,
+        "showXAxis": false,
+        "showInChartValues": false,
+        "showInChartLabels": true,
+        "strokeWidth": 1,
+        "fillOpacity": 0.6,
+        "showXAxisLabel": true,
+        "showYAxisLabel": true,
+        "displayXAxis": true,
+        "displayYAxis": true,
+        "hexbinRadius": 20,
+        "hexbinNumber": 20,
+        "hexbinRadiusMode": "NUM_HEXAGONS",
+        "yCustomExtent": {
+          "editMode": "AUTO",
+          "manualExtent": [
+            null,
+            null
+          ]
+        },
+        "xCustomExtent": {
+          "editMode": "AUTO",
+          "manualExtent": [
+            null,
+            null
+          ]
+        },
+        "chartHeight": 200,
+        "singleXAxis": true,
+        "multiTooltips": false,
+        "animationFrameDuration": 3000,
+        "animationRepeat": true,
+        "colorOptions": {
+          "singleColor": "#2678B1",
+          "transparency": 0.75,
+          "colorPalette": "gyr1",
+          "ccScaleMode": "NORMAL",
+          "customPalette": {
+            "id": "__dku_custom__",
+            "name": "Custom Palette",
+            "colors": [],
+            "values": [],
+            "fixedValues": false
+          },
+          "paletteType": "CONTINUOUS",
+          "quantizationMode": "NONE",
+          "numQuantizeSteps": 5,
+          "paletteMiddleValue": 0.0,
+          "customColors": {},
+          "heatDensityMapIntensity": 0.3,
+          "heatDensityMapRadius": 0.18
+        },
+        "bubblesOptions": {
+          "defaultRadius": 5.0,
+          "singleShape": "FILLED_CIRCLE"
+        },
+        "computeMode": "NORMAL",
+        "xAxisMode": "NORMAL",
+        "yAxisMode": "NORMAL",
+        "pieOptions": {
+          "donutHoleSize": 54.0
+        },
+        "scatterOptions": {
+          "equalScales": false,
+          "identityLine": false
+        },
+        "mapOptions": {
+          "tilesLayer": "cartodb-positron",
+          "lockSquareGrid": false
+        },
+        "mapGridOptions": {
+          "gridLonDeg": 0.5,
+          "gridLatDeg": 0.5
+        },
+        "thumbnailData": "data:image/png;base64,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",
+        "disableSafetyLimits": false,
+        "useLiveProcessingIfAvailable": true,
+        "legendPlacement": "OUTER_RIGHT"
+      },
+      "maxDataBytes": 157286400
+    },
+    {
+      "copySelectionFromScript": true,
+      "engineType": "LINO",
+      "def": {
+        "type": "density_heat_map",
+        "variant": "normal",
+        "name": "New chart",
+        "userEditedName": false,
+        "genericDimension0": [],
+        "genericDimension1": [],
+        "facetDimension": [],
+        "animationDimension": [],
+        "genericMeasures": [],
+        "xDimension": [],
+        "yDimension": [],
+        "uaXDimension": [],
+        "uaYDimension": [],
+        "uaSize": [
+          {
+            "column": "avg_basket",
+            "type": "NUMERICAL",
+            "treatAsAlphanum": false,
+            "isA": "ua",
+            "adminLevel": 0
+          }
+        ],
+        "uaShape": [],
+        "uaColor": [],
+        "uaTooltip": [
+          {
+            "column": "customer_id",
+            "type": "NUMERICAL",
+            "treatAsAlphanum": false,
+            "isA": "ua",
+            "adminLevel": 0
+          },
+          {
+            "column": "avg_basket",
+            "type": "NUMERICAL",
+            "treatAsAlphanum": false,
+            "isA": "ua",
+            "adminLevel": 0
+          }
+        ],
+        "groupDimension": [],
+        "xMeasure": [],
+        "yMeasure": [],
+        "colorMeasure": [],
+        "sizeMeasure": [],
+        "geometry": [
+          {
+            "column": "customer_location",
+            "type": "GEOPOINT",
+            "treatAsAlphanum": false,
+            "isA": "ua",
+            "adminLevel": 0
+          }
+        ],
+        "tooltipMeasures": [],
+        "boxplotBreakdownDim": [],
+        "boxplotValue": [],
+        "filters": [],
+        "axis1LogScale": false,
+        "axis2LogScale": false,
+        "includeZero": true,
+        "smoothing": true,
+        "showLegend": true,
+        "showXAxis": false,
+        "showInChartValues": false,
+        "showInChartLabels": true,
+        "strokeWidth": 1,
+        "fillOpacity": 0.6,
+        "showXAxisLabel": true,
+        "showYAxisLabel": true,
+        "displayXAxis": true,
+        "displayYAxis": true,
+        "hexbinRadius": 20,
+        "hexbinNumber": 20,
+        "hexbinRadiusMode": "NUM_HEXAGONS",
+        "yCustomExtent": {
+          "editMode": "AUTO",
+          "manualExtent": [
+            null,
+            null
+          ]
+        },
+        "xCustomExtent": {
+          "editMode": "AUTO",
+          "manualExtent": [
+            null,
+            null
+          ]
+        },
+        "chartHeight": 200,
+        "singleXAxis": true,
+        "multiTooltips": false,
+        "animationFrameDuration": 3000,
+        "animationRepeat": true,
+        "colorOptions": {
+          "singleColor": "#2678B1",
+          "transparency": 0.75,
+          "colorPalette": "gyr1",
+          "ccScaleMode": "NORMAL",
+          "customPalette": {
+            "id": "__dku_custom__",
+            "name": "Custom Palette",
+            "colors": [],
+            "values": [],
+            "fixedValues": false
+          },
+          "paletteType": "CONTINUOUS",
+          "quantizationMode": "NONE",
+          "numQuantizeSteps": 5,
+          "paletteMiddleValue": 0.0,
+          "customColors": {},
+          "heatDensityMapIntensity": 0.17,
+          "heatDensityMapRadius": 0.16
+        },
+        "bubblesOptions": {
+          "defaultRadius": 5.0,
+          "singleShape": "FILLED_CIRCLE"
+        },
+        "computeMode": "NORMAL",
+        "xAxisMode": "NORMAL",
+        "yAxisMode": "NORMAL",
+        "pieOptions": {
+          "donutHoleSize": 54.0
+        },
+        "scatterOptions": {
+          "equalScales": false,
+          "identityLine": false
+        },
+        "mapOptions": {
+          "tilesLayer": "cartodb-positron",
+          "lockSquareGrid": false
+        },
+        "mapGridOptions": {
+          "gridLonDeg": 0.5,
+          "gridLatDeg": 0.5
+        },
+        "thumbnailData": "data:image/png;base64,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\u003d",
+        "disableSafetyLimits": false,
+        "useLiveProcessingIfAvailable": true,
+        "legendPlacement": "OUTER_RIGHT"
+      },
+      "maxDataBytes": 157286400
+    }
+  ]
+}

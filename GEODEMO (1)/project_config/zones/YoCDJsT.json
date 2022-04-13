@@ -1,0 +1,68 @@
+{
+  "name": "Starbucks Coffee",
+  "color": "#006241",
+  "items": [
+    {
+      "objectId": "customer_location_dataset",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "store_location_dataset",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_Stores_dataset_joined",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "Stores_dataset_joined",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_customer_location_with_closest_starbucks",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "compute_store_location_dataset_prepared",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "customer_location_with_closest_starbucks",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "store_location_dataset_prepared",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_customers_and_stores_stacked",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "customers_and_stores_stacked",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_customers_and_stores_stacked_prepared",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "compute_customer_location_dataset_filtered",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "customer_location_dataset_filtered",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "customers_and_stores",
+      "objectType": "DATASET"
+    }
+  ],
+  "shared": [],
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

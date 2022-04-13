@@ -1,0 +1,48 @@
+{
+  "name": "California",
+  "color": "#D03713",
+  "items": [
+    {
+      "objectId": "californian_counties_joined",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "californian_counties",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_californian_counties_joined",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "starbucks_location",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Plate_Boundaries",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_counties_with_plates",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "counties_with_plates",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_counties_with_plates_stacked",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "counties_with_plates_stacked",
+      "objectType": "DATASET"
+    }
+  ],
+  "shared": [],
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}
