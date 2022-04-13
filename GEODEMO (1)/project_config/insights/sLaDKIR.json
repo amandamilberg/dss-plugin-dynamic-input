@@ -1,0 +1,186 @@
+{
+  "type": "chart",
+  "params": {
+    "datasetSmartName": "Stores_dataset_joined",
+    "engineType": "LINO",
+    "refreshableSelection": {
+      "selection": {
+        "useMemTable": false,
+        "filter": {
+          "distinct": false,
+          "enabled": false
+        },
+        "partitionSelectionMethod": "ALL",
+        "latestPartitionsN": 1,
+        "ordering": {
+          "enabled": false,
+          "rules": []
+        },
+        "samplingMethod": "HEAD_SEQUENTIAL",
+        "maxRecords": 10000,
+        "targetRatio": 0.02,
+        "withinFirstN": -1,
+        "maxReadUncompressedBytes": -1
+      },
+      "autoRefreshSample": false,
+      "_refreshTrigger": 0
+    },
+    "def": {
+      "type": "scatter_map",
+      "variant": "normal",
+      "name": "New chart",
+      "userEditedName": false,
+      "genericDimension0": [],
+      "genericDimension1": [],
+      "facetDimension": [],
+      "animationDimension": [],
+      "genericMeasures": [],
+      "xDimension": [],
+      "yDimension": [],
+      "uaXDimension": [],
+      "uaYDimension": [],
+      "uaSize": [],
+      "uaShape": [],
+      "uaColor": [],
+      "uaTooltip": [
+        {
+          "column": "avg_basket",
+          "type": "NUMERICAL",
+          "treatAsAlphanum": false,
+          "isA": "ua",
+          "adminLevel": 0
+        },
+        {
+          "column": "last_purchase",
+          "type": "ALPHANUM",
+          "treatAsAlphanum": false,
+          "isA": "ua",
+          "adminLevel": 0
+        }
+      ],
+      "groupDimension": [],
+      "xMeasure": [],
+      "yMeasure": [],
+      "colorMeasure": [],
+      "sizeMeasure": [],
+      "geometry": [
+        {
+          "column": "customer_location",
+          "type": "GEOPOINT",
+          "treatAsAlphanum": false,
+          "isA": "ua",
+          "adminLevel": 0
+        }
+      ],
+      "tooltipMeasures": [],
+      "boxplotBreakdownDim": [],
+      "boxplotValue": [],
+      "filters": [],
+      "axis1LogScale": false,
+      "axis2LogScale": false,
+      "includeZero": true,
+      "smoothing": true,
+      "showLegend": true,
+      "showXAxis": false,
+      "showInChartValues": false,
+      "showInChartLabels": true,
+      "strokeWidth": 1,
+      "fillOpacity": 0.6,
+      "showXAxisLabel": true,
+      "showYAxisLabel": true,
+      "displayXAxis": true,
+      "displayYAxis": true,
+      "hexbinRadius": 20,
+      "hexbinNumber": 20,
+      "hexbinRadiusMode": "NUM_HEXAGONS",
+      "yCustomExtent": {
+        "editMode": "AUTO",
+        "manualExtent": [
+          null,
+          null
+        ]
+      },
+      "xCustomExtent": {
+        "editMode": "AUTO",
+        "manualExtent": [
+          null,
+          null
+        ]
+      },
+      "chartHeight": 200,
+      "singleXAxis": true,
+      "multiTooltips": false,
+      "animationFrameDuration": 3000,
+      "animationRepeat": true,
+      "colorOptions": {
+        "singleColor": "#2678B1",
+        "transparency": 0.75,
+        "colorPalette": "default",
+        "ccScaleMode": "NORMAL",
+        "customPalette": {
+          "id": "__dku_custom__",
+          "name": "Custom Palette",
+          "colors": [],
+          "values": [],
+          "fixedValues": false
+        },
+        "paletteType": "CONTINUOUS",
+        "quantizationMode": "NONE",
+        "numQuantizeSteps": 5,
+        "paletteMiddleValue": 0.0,
+        "customColors": {},
+        "heatDensityMapIntensity": 0.5,
+        "heatDensityMapRadius": 0.5
+      },
+      "bubblesOptions": {
+        "defaultRadius": 5.0,
+        "singleShape": "FILLED_CIRCLE"
+      },
+      "xAxisMode": "NORMAL",
+      "yAxisMode": "NORMAL",
+      "pieOptions": {
+        "donutHoleSize": 54.0
+      },
+      "scatterOptions": {
+        "equalScales": false,
+        "identityLine": false
+      },
+      "mapOptions": {
+        "tilesLayer": "cartodb-positron",
+        "lockSquareGrid": false
+      },
+      "mapGridOptions": {
+        "gridLonDeg": 0.5,
+        "gridLatDeg": 0.5
+      },
+      "thumbnailData": "data:image/png;base64,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\u003d\u003d",
+      "disableSafetyLimits": false,
+      "useLiveProcessingIfAvailable": true,
+      "legendPlacement": "OUTER_RIGHT"
+    },
+    "maxDataBytes": 157286400
+  },
+  "owner": "admin",
+  "listed": false,
+  "name": "New chart on Stores_dataset_joined",
+  "dashboardCreationId": "D6Wwtr1",
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1637337895206
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1637337895206
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

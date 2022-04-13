@@ -1,0 +1,282 @@
+{
+  "joins": [
+    {
+      "table2": 1,
+      "table1": 0,
+      "conditionsMode": "AND",
+      "rightLimit": {
+        "decisionColumn": {},
+        "maxMatches": 1,
+        "type": "KEEP_LARGEST",
+        "enabled": false
+      },
+      "type": "LEFT",
+      "outerJoinOnTheLeft": true,
+      "on": [
+        {
+          "column1": {
+            "name": "GEOID",
+            "table": 0
+          },
+          "column2": {
+            "name": "GEOID_DKU",
+            "table": 1
+          },
+          "type": "EQ"
+        }
+      ]
+    }
+  ],
+  "selectedColumns": [
+    {
+      "name": "the_geom",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "shp_srs",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "STATEFP",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "COUNTYFP",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "COUNTYNS",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "GEOID",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "NAME",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "NAMELSAD",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "LSAD",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "CLASSFP",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "MTFCC",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "CSAFP",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "CBSAFP",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "METDIVFP",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "FUNCSTAT",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "ALAND",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "AWATER",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "INTPTLAT",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "INTPTLON",
+      "type": "string",
+      "table": 0
+    },
+    {
+      "name": "population",
+      "type": "double",
+      "table": 1
+    },
+    {
+      "name": "med_house_income",
+      "type": "bigint",
+      "table": 1
+    }
+  ],
+  "resolvedSelectedColumns": [],
+  "engineParams": {
+    "hive": {
+      "skipPrerunValidate": false,
+      "hiveconf": [],
+      "inheritConf": "default",
+      "addDkuUdf": false,
+      "executionEngine": "HIVECLI_LOCAL"
+    },
+    "sqlPipelineParams": {
+      "pipelineAllowMerge": true,
+      "pipelineAllowStart": true
+    },
+    "impala": {
+      "forceStreamMode": true
+    },
+    "lowerCaseSchemaIfEngineRequiresIt": true,
+    "sparkSQL": {
+      "skipPrerunValidate": false,
+      "pipelineAllowMerge": true,
+      "useGlobalMetastore": true,
+      "pipelineAllowStart": true,
+      "readParams": {
+        "mode": "AUTO",
+        "autoModeRepartitionInto": 10,
+        "map": {}
+      },
+      "overwriteOutputSchema": false,
+      "executionEngine": "SPARK_SUBMIT",
+      "sparkConfig": {
+        "inheritConf": "k8s-config-standard",
+        "conf": []
+      }
+    }
+  },
+  "virtualInputs": [
+    {
+      "index": 1
+    },
+    {
+      "preFilter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "autoSelectColumns": false,
+      "originLabel": "nj_demo_prepared",
+      "index": 0,
+      "computedColumns": []
+    }
+  ],
+  "computedColumns": [],
+  "postFilter": {
+    "$status": {
+      "schema": {
+        "columns": [
+          {
+            "name": "the_geom",
+            "type": "string"
+          },
+          {
+            "name": "shp_srs",
+            "type": "string"
+          },
+          {
+            "name": "STATEFP",
+            "type": "string"
+          },
+          {
+            "name": "COUNTYFP",
+            "type": "string"
+          },
+          {
+            "name": "COUNTYNS",
+            "type": "string"
+          },
+          {
+            "name": "GEOID",
+            "type": "string"
+          },
+          {
+            "name": "NAME",
+            "type": "string"
+          },
+          {
+            "name": "NAMELSAD",
+            "type": "string"
+          },
+          {
+            "name": "LSAD",
+            "type": "string"
+          },
+          {
+            "name": "CLASSFP",
+            "type": "string"
+          },
+          {
+            "name": "MTFCC",
+            "type": "string"
+          },
+          {
+            "name": "CSAFP",
+            "type": "string"
+          },
+          {
+            "name": "CBSAFP",
+            "type": "string"
+          },
+          {
+            "name": "METDIVFP",
+            "type": "string"
+          },
+          {
+            "name": "FUNCSTAT",
+            "type": "string"
+          },
+          {
+            "name": "ALAND",
+            "type": "string"
+          },
+          {
+            "name": "AWATER",
+            "type": "string"
+          },
+          {
+            "name": "INTPTLAT",
+            "type": "string"
+          },
+          {
+            "name": "INTPTLON",
+            "type": "string"
+          },
+          {
+            "name": "population",
+            "type": "double"
+          },
+          {
+            "name": "med_house_income",
+            "type": "bigint"
+          }
+        ],
+        "userModified": false
+      }
+    }
+  },
+  "enableAutoCastInJoinConditions": false
+}

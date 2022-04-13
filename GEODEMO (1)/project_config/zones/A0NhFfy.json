@@ -1,0 +1,32 @@
+{
+  "name": "OpenStreetMap Enrichment",
+  "color": "#8C2DA7",
+  "items": [
+    {
+      "objectId": "stores_with_poi",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_stores_with_poi",
+      "objectType": "RECIPE"
+    },
+    {
+      "objectId": "Stores",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "Stores_prepared",
+      "objectType": "DATASET"
+    },
+    {
+      "objectId": "compute_Stores_prepared",
+      "objectType": "RECIPE"
+    }
+  ],
+  "shared": [],
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}
