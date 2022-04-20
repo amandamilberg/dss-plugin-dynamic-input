@@ -191,6 +191,15 @@ logger.info("Completed join computation")
 
 # Write recipe outputs
 logger.info("Writing datasets")
-inner_dataset.write_with_schema(inner)
-left_unmatched_dataset.write_with_schema(left_unjoined)
-right_unmatched_dataset.write_with_schema(right_unjoined)
+try:
+    inner_dataset.write_with_schema(inner)
+except:
+    pass
+try:
+    left_unmatched_dataset.write_with_schema(left_unjoined)
+except:
+    pass
+try:
+    right_unmatched_dataset.write_with_schema(right_unjoined)
+except:
+    pass

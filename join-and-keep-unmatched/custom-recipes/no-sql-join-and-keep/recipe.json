@@ -46,7 +46,7 @@
             "name": "inner",
             "label": "Inner Join",
             "arity": "UNARY",
-            "required": true,
+            "required": false,
             "acceptsDataset": true
         },
         {
@@ -54,7 +54,7 @@
             "label": "Left Unmatched",
             "description": "Rows from the left dataset that are not in the inner join.",
             "arity": "UNARY",
-            "required": true,
+            "required": false,
             "acceptsDataset": true
         },
         {
@@ -62,7 +62,7 @@
             "label": "Right Unmatched",
             "description": "Rows from the right dataset that are not in the inner join.",
             "arity": "UNARY",
-            "required": true,
+            "required": false,
             "acceptsDataset": true
         }
         // ...
