@@ -1,0 +1,140 @@
+// This file is the descriptor for the Custom code recipe batch-dynamic-query
+{
+    // Meta data for display purposes
+    "meta": {
+        // label: name of the recipe as displayed, should be short
+        "label": "Batch dynamic query",
+        // description: longer string to help end users understand what this recipe does
+        "description": "Write an SQL query with keywords to be replaced with Dynamic Input. The Dynamic input will need to be an existing dataset in Dataiku, and the table to be queried dynamically must have connectivity established in DSS.",
+        // icon: must be one of the FontAwesome 3.2.1 icons, complete list here at https://fontawesome.com/v3.2.1/icons/
+        "icon": "icon-puzzle-piece"
+    },
+
+    "kind": "PYTHON",
+    
+
+    // Inputs and outputs are defined by roles. In the recipe's I/O tab, the user can associate one
+    // or more dataset to each input and output role.
+
+    // The "arity" field indicates whether the user can associate several datasets to the role ('NARY')
+    // or at most one ('UNARY'). The "required" field indicates whether the user is allowed to
+    // associate no dataset with the role.
+
+    "inputRoles": [
+        {
+            "name": "input_A_role",
+            "label": "Dynamic input",
+            "description": "Dataset name",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": true
+        }
+    ],
+
+    "outputRoles": [
+        {
+            "name": "output",
+            "label": "Output",
+            "description": "Dataset name",
+            "arity": "UNARY",
+            "required": false,
+            "acceptsDataset": true
+        }
+    ],
+
+    /* The field "params" holds a list of all the params
+       for wich the user will be prompted for values in the Settings tab of the recipe.
+
+       The available parameter types include:
+       STRING, STRINGS, INT, DOUBLE, BOOLEAN, SELECT, MULTISELECT, MAP, TEXTAREA, PRESET, COLUMN, COLUMNS
+
+       For the full list and for more details, see the documentation: https://doc.dataiku.com/dss/latest/plugins/reference/params.html
+    */
+
+    "params": [
+        {
+            "name": "query_starter",
+            "label": "SQL Query",
+            "type": "TEXTAREA",
+            "description": "Write your SQL query here. It is recommend to test the SQL query in an SQL query recipe on the table you are querying first to account for various SQL query languages' syntax.",
+            "mandatory": true
+        },
+        {
+            "name": "sqlconn",
+            "label": "SQL Connection",
+            "type": "STRING",
+            "description": "Add your SQL Connection name in Dataiku",
+            "mandatory": true
+        },
+        {
+            "name": "replace_val_1",
+            "label": "Keyword #1",
+            "type": "STRING",
+            "description": "Keyword in the SQL query that should be replaced",
+            "mandatory": true
+        },
+        {
+            "name": "replace_col_1",
+            "label": "Column name #1",
+            "type": "COLUMN",
+            "columnRole": "input_A_role",
+            "description": "Column name in the Dynamic Input dataset for the query value",
+            "mandatory": true
+        },{
+            "name": "replace_val_2",
+            "label": "(Optional) Keyword #2",
+            "type": "STRING",
+            "description": "If there are more dynamic inputs, designate additional keyword here",
+            "mandatory": false,
+            "visibilityCondition" : "model.replace_col_1 != None" 
+        },
+        {
+            "name": "replace_col_2",
+            "label": "Column name #2",
+            "type": "COLUMN",
+            "columnRole": "input_A_role",
+            "description": "If there are more dynamic inputs, designate additional dynamic input column here",
+            "mandatory": false,
+            "visibilityCondition" : "model.replace_col_1 != None" 
+        },
+        {
+            "name": "replace_val_3",
+            "label": "(Optional) Keyword #3",
+            "type": "STRING",
+            "description": "Enter additional keyword replacement here",
+            "mandatory": false,
+            "visibilityCondition" : "model.replace_col_2 != None" 
+        },
+        {
+            "name": "replace_col_3",
+            "label": "Column name #3",
+            "type": "COLUMN",
+            "columnRole": "input_A_role",
+            "description": "Enter additional dynamic input column here",
+            "mandatory": false,
+            "visibilityCondition" : "model.replace_col_2 != None" 
+        }
+
+        // A 'COLUMN' parameter is a string, whose value is a column name from an input schema.
+        // To specify the input schema whose column names are used, use the "columnRole" field like below.
+        // The column names will come from the schema of the first dataset associated to that role.
+        //{
+           // "name": "parameter4",
+           //"type": "COLUMN",
+           // "columnRole": "input_B_role"
+        //}
+
+        // The 'COLUMNS' type works in the same way, except that it is a list of strings.
+    ],
+
+    // The field "resourceKeys" holds a list of keys that allows to limit the number
+    // of concurrent executions and activities triggered by this recipe.
+    //
+    // Administrators can configure the limit per resource key in the Administration > Settings > Flow build
+    // screen.
+
+    "resourceKeys": [],
+    "selectableFromDataset": "input_A_role"
+
+
+}
