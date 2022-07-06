@@ -69,6 +69,21 @@ replace_val_2 = get_recipe_config().get('replace_val_2',None)
 replace_col_2 = get_recipe_config().get('replace_col_2',None)
 replace_val_3 = get_recipe_config().get('replace_val_3',None)
 replace_col_3 = get_recipe_config().get('replace_col_3',None)
+replace_val_4 = get_recipe_config().get('replace_val_4',None)
+replace_col_4 = get_recipe_config().get('replace_col_4',None)
+replace_val_5 = get_recipe_config().get('replace_val_5',None)
+replace_col_5 = get_recipe_config().get('replace_col_5',None)
+replace_val_6 = get_recipe_config().get('replace_val_6',None)
+replace_col_6 = get_recipe_config().get('replace_col_6',None)
+replace_val_7 = get_recipe_config().get('replace_val_7',None)
+replace_col_7 = get_recipe_config().get('replace_col_7',None)
+replace_val_8 = get_recipe_config().get('replace_val_8',None)
+replace_col_8 = get_recipe_config().get('replace_col_8',None)
+replace_val_9 = get_recipe_config().get('replace_val_9',None)
+replace_col_9 = get_recipe_config().get('replace_col_9',None)
+replace_val_10 = get_recipe_config().get('replace_val_10',None)
+replace_col_10 = get_recipe_config().get('replace_col_10',None)
+
 
 #############################
 # Your original recipe
@@ -79,12 +94,15 @@ executor = SQLExecutor2(connection=sqlconn)
 # Compute recipe outputs
 
 # Create dictionary for find/replace
-replace_list = [[replace_col_1, replace_val_1],[replace_col_2,replace_val_2],[replace_col_3,replace_val_3]]
+replace_list = [[replace_col_1, replace_val_1],[replace_col_2,replace_val_2],[replace_col_3,replace_val_3],[replace_col_4, replace_val_4],[replace_col_5,replace_val_5],[replace_col_6,replace_val_6],[replace_col_7, replace_val_7],[replace_col_8,replace_val_8],[replace_col_9,replace_val_9],[replace_col_10, replace_val_10]]
 
 # Remove list if empty
 replace_list = [i for i in replace_list if None not in i]
+print(replace_list)
 
 num_replacements=len(replace_list)
+if num_replacements == 0:
+    raise Exception("The number of join keys must be the same for the first and the second datasets")
 
 def write_query(query_starter, dummy_val, dynamic_input):
     query_final = query_starter.replace(dummy_val, str(dynamic_input))

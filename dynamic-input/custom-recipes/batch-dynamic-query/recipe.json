@@ -56,21 +56,21 @@
             "name": "query_starter",
             "label": "SQL Query",
             "type": "TEXTAREA",
-            "description": "Write your SQL query here. It is recommend to test the SQL query in an SQL query recipe on the table you are querying first to account for various SQL query languages' syntax.",
+            "description": "INSTRUCTIONS: First write and validate your query in an SQL Query Recipe on the table you are querying to account for various SQL query languages' syntax, then paste the validated query above. See Migration Guide for more information.",
             "mandatory": true
         },
         {
             "name": "sqlconn",
             "label": "SQL Connection",
             "type": "STRING",
-            "description": "Add your SQL Connection name in Dataiku",
+            "description": "SQL Connection name as defined in Dataiku",
             "mandatory": true
         },
         {
             "name": "replace_val_1",
             "label": "Keyword #1",
             "type": "STRING",
-            "description": "Keyword in the SQL query that should be replaced",
+            "description": "Keyword in the SQL query that should be replaced (NOTE: avoid integers)",
             "mandatory": true
         },
         {
@@ -84,7 +84,6 @@
             "name": "replace_val_2",
             "label": "(Optional) Keyword #2",
             "type": "STRING",
-            "description": "If there are more dynamic inputs, designate additional keyword here",
             "mandatory": false,
             "visibilityCondition" : "model.replace_col_1 != None" 
         },
@@ -93,7 +92,6 @@
             "label": "Column name #2",
             "type": "COLUMN",
             "columnRole": "input_A_role",
-            "description": "If there are more dynamic inputs, designate additional dynamic input column here",
             "mandatory": false,
             "visibilityCondition" : "model.replace_col_1 != None" 
         },
@@ -101,7 +99,6 @@
             "name": "replace_val_3",
             "label": "(Optional) Keyword #3",
             "type": "STRING",
-            "description": "Enter additional keyword replacement here",
             "mandatory": false,
             "visibilityCondition" : "model.replace_col_2 != None" 
         },
@@ -110,9 +107,113 @@
             "label": "Column name #3",
             "type": "COLUMN",
             "columnRole": "input_A_role",
-            "description": "Enter additional dynamic input column here",
             "mandatory": false,
             "visibilityCondition" : "model.replace_col_2 != None" 
+        },
+        {
+            "name": "replace_val_4",
+            "label": "(Optional) Keyword #4",
+            "type": "STRING",
+            "mandatory": false,
+            "visibilityCondition" : "model.replace_col_3 != None" 
+        },
+        {
+            "name": "replace_col_4",
+            "label": "Column name #4",
+            "type": "COLUMN",
+            "columnRole": "input_A_role",
+            "mandatory": false,
+            "visibilityCondition" : "model.replace_col_3 != None" 
+        },
+        {
+            "name": "replace_val_5",
+            "label": "(Optional) Keyword #5",
+            "type": "STRING",
+            "mandatory": false,
+            "visibilityCondition" : "model.replace_col_4 != None" 
+        },
+        {
+            "name": "replace_col_5",
+            "label": "Column name #5",
+            "type": "COLUMN",
+            "columnRole": "input_A_role",
+            "mandatory": false,
+            "visibilityCondition" : "model.replace_col_4 != None" 
+        },
+        {
+            "name": "replace_val_6",
+            "label": "(Optional) Keyword #6",
+            "type": "STRING",
+            "mandatory": false,
+            "visibilityCondition" : "model.replace_col_5 != None" 
+        },
+        {
+            "name": "replace_col_6",
+            "label": "Column name #6",
+            "type": "COLUMN",
+            "columnRole": "input_A_role",
+            "mandatory": false,
+            "visibilityCondition" : "model.replace_col_5 != None" 
+        },
+        {
+            "name": "replace_val_7",
+            "label": "(Optional) Keyword #7",
+            "type": "STRING",
+            "mandatory": false,
+            "visibilityCondition" : "model.replace_col_6 != None" 
+        },
+        {
+            "name": "replace_col_7",
+            "label": "Column name #7",
+            "type": "COLUMN",
+            "columnRole": "input_A_role",
+            "mandatory": false,
+            "visibilityCondition" : "model.replace_col_6 != None" 
+        },
+        {
+            "name": "replace_val_8",
+            "label": "(Optional) Keyword #8",
+            "type": "STRING",
+            "mandatory": false,
+            "visibilityCondition" : "model.replace_col_7 != None" 
+        },
+        {
+            "name": "replace_col_8",
+            "label": "Column name #8",
+            "type": "COLUMN",
+            "columnRole": "input_A_role",
+            "mandatory": false,
+            "visibilityCondition" : "model.replace_col_7 != None" 
+        },
+        {
+            "name": "replace_val_9",
+            "label": "(Optional) Keyword #9",
+            "type": "STRING",
+            "mandatory": false,
+            "visibilityCondition" : "model.replace_col_8 != None" 
+        },
+        {
+            "name": "replace_col_9",
+            "label": "Column name #9",
+            "type": "COLUMN",
+            "columnRole": "input_A_role",
+            "mandatory": false,
+            "visibilityCondition" : "model.replace_col_8 != None" 
+        },
+        {
+            "name": "replace_val_10",
+            "label": "(Optional) Keyword #10",
+            "type": "STRING",
+            "mandatory": false,
+            "visibilityCondition" : "model.replace_col_9 != None" 
+        },
+        {
+            "name": "replace_col_10",
+            "label": "Column name #10",
+            "type": "COLUMN",
+            "columnRole": "input_A_role",
+            "mandatory": false,
+            "visibilityCondition" : "model.replace_col_9 != None" 
         }
 
         // A 'COLUMN' parameter is a string, whose value is a column name from an input schema.
