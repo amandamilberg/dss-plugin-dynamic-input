@@ -1,0 +1,15 @@
+{
+  "actions": [
+    {
+      "ts": 1657078181449,
+      "action": "INSTALL",
+      "user": "admin"
+    }
+  ],
+  "gitState": {
+    "enabled": true,
+    "repository": "https://github.com/dataiku/walmart-dataiku.git",
+    "path": "/dynamic-input/",
+    "checkout": "refs/heads/main"
+  }
+}

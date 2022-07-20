@@ -1,13 +1,8 @@
 # Changelog
 
-## Version X.Y.Z - Type of release (*) - YYYY-MM-DD
-- Changes 1 ...
-- Changes 2 ... 
-- ...
+## Version 1.0.1
+- Added Group Replacement Value for SQL IN Clause
+- Changed plugin icon
 
-(*) Possible types of releases
-
-- Initial release
-- Bugfix release
-- Feature release
-- .... 
+## Version 1.0.0
+Initial Release 

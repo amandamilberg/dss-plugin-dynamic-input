@@ -7,7 +7,7 @@
         // description: longer string to help end users understand what this recipe does
         "description": "Write an SQL query with keywords to be replaced with Dynamic Input. The Dynamic input will need to be an existing dataset in Dataiku, and the table to be queried dynamically must have connectivity established in DSS.",
         // icon: must be one of the FontAwesome 3.2.1 icons, complete list here at https://fontawesome.com/v3.2.1/icons/
-        "icon": "icon-puzzle-piece"
+        "icon": "icon-edit"
     },
 
     "kind": "PYTHON",
@@ -214,6 +214,23 @@
             "columnRole": "input_A_role",
             "mandatory": false,
             "visibilityCondition" : "model.replace_col_9 != None" 
+        },
+        {
+            "name": "group_replacement_value",
+            "label": "Group Replacement Value for SQL IN Clause",
+            "type": "BOOLEAN",
+            "defaultValue": false,
+            "mandatory": false
+        },
+         {
+            "visibilityCondition": "model.group_replacement_value",
+            "name": "character_limit",
+            "label": "Character Limit for IN Clause",
+            "type": "INT",
+            "defaultValue": 1000,
+            "description": "Default value is 1000",
+            "minI": 1000,
+            "mandatory": true
         }
 
         // A 'COLUMN' parameter is a string, whose value is a column name from an input schema.

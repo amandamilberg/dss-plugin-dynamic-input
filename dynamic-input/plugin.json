@@ -1,14 +1,13 @@
 {
     "id": "dynamic-input",
-    "version": "0.1.0",
+    "version": "1.0.1",
     "meta": {
         "label": "Dynamic input tool",
         "category": "Visual recipes",
         "description": "This plugin allows users to dynamically input values from within a flow",
-        "author": "Dataiku (Cassandra CHULJIAN)",
-        "icon": "fa-solid fa-circle-nodes",
+        "author": "Dataiku (Cassandra CHULJIAN, Amanda MILBERG)",
+        "icon": "icon-edit",
         "licenseInfo": "Apache Software License",
-        "url": "https://www.dataiku.com/product/plugins/your-plugin-id/",
         "tags": [
             "myTag"
         ],
