@@ -175,11 +175,13 @@ def run_plugin(df, replace_list, query_starter, char_limit):
             dynamic_val, single_query = group_for_inclause(df, col, query_starter, char_limit)
             if single_query:
                 query_in = write_query(query_starter, dummy_val, dynamic_val)
+                print("EXECUTING QUERY: " + query_in)
                 df_out = executor.query_to_df(query_in)
                 return df_out
             else:
                 for key,value in dynamic_val.items():
                     query_in = write_query(query_starter, dummy_val, value)
+                    print("EXECUTING QUERY: " + query_in)
                     df_out = executor.query_to_df(query_in)
                     if flag == 0:
                         df_output=df_out.copy(deep=True)
