@@ -3,7 +3,6 @@
     "version": "1.0.1",
     "meta": {
         "label": "Dynamic input tool",
-        "category": "Visual recipes",
         "description": "This plugin allows users to dynamically input values from within a flow",
         "author": "Dataiku (Cassandra CHULJIAN, Amanda MILBERG)",
         "icon": "icon-edit",
