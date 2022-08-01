@@ -1,0 +1,52 @@
+// This file is the descriptor for the Custom code recipe partitions-to-excel
+{
+    // Meta data for display purposes
+    "meta": {
+        // label: name of the recipe as displayed, should be short
+        "label": "Partitioned Dataset to Multi-Sheet Excel Export",
+        // description: longer string to help end users understand what this recipe does
+        "description": "Take a partitioned dataset as input and output a multi-sheet xlsx file where each partition is a seperate tab",
+        // icon: must be one of the FontAwesome 3.2.1 icons, complete list here at https://fontawesome.com/v3.2.1/icons/
+        "icon": "icon-copy"
+    },
+
+    "kind": "PYTHON",
+    "selectableFromDataset": "input_dataset",
+
+    "inputRoles" : [
+        {
+            "name": "input_dataset",
+            "label": "Input datasets to export as sheet",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": true
+        }
+    ],
+
+    "outputRoles" : [
+        {
+            "name": "folder",
+            "label": "Folder containing excel workbook",
+            "description": "Folder containing excel workbook with multiple sheets from the input datasets",
+            "arity": "UNARY",
+            "acceptsDataset": false,
+            "acceptsManagedFolder": true,
+            "required": true
+        }
+    ],
+    "params": [
+        {
+            "name": "output_workbook_name",
+            "label": "Name of the Excel Workbook",
+            "type": "STRING",
+            "defaultValue": "output",
+            "mandatory": true
+        } 
+    // The field "resourceKeys" holds a list of keys that allows to limit the number
+    // of concurrent executions and activities triggered by this recipe.
+    //
+    // Administrators can configure the limit per resource key in the Administration > Settings > Flow build
+    // screen.
+    ],
+    "resourceKeys": []
+}
