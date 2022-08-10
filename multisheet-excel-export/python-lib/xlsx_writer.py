@@ -24,6 +24,8 @@ def dataframes_to_xlsx(input_dataframes_names, xlsx_abs_path, dataframe_provider
     writer = pd.ExcelWriter(xlsx_abs_path, engine='openpyxl')
     for i,name in enumerate(input_dataframes_names):
         df = dataframe_provider(name)
+        df = df.applymap(lambda x: x.encode('unicode_escape').
+                 decode('utf-8') if isinstance(x, str) else x)
         logger.info("Writing dataset into excel sheet...")
         if not customize_sheet:
             df.to_excel(writer, sheet_name=name, index=False, encoding='utf-8')
