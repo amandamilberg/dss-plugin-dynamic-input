@@ -1,0 +1,46 @@
+{
+    "meta" : {
+        "label" : "Keep the job files of the last 'x' count",
+        "description" : "Keep logs and temporary files of old jobs by 'x' count in descending order (latest to oldest)",
+        "category" : "DSS maintenance",
+        "icon" : "icon-trash"
+    },
+
+    "impersonate" : false,
+
+    "permissions" : ["ADMIN"],
+
+    "resultType" : "HTML",
+
+    "resultLabel" : "Deleted logs",
+
+    "params": [
+        {
+            "name": "count",
+            "label" : "Number of logs to keep descending order (latest to oldest)",
+            "type": "INT",
+            "description":"Number of logs to keep descending order (latest to oldest)",
+            "mandatory" : true,
+            "defaultValue" : 0
+        },
+        {
+            "name": "performDeletion",
+            "label" : "Perform deletion",
+            "type": "BOOLEAN",
+            "description":"If not checked, only lists what will be deleted",
+            "mandatory" : true,
+            "defaultValue" : false
+        }
+    ],
+
+    "adminParams": [
+        {
+            "name": "allProjects",
+            "label" : "All projects",
+            "type": "BOOLEAN",
+            "description":"Apply to all projects, not just the current one",
+            "mandatory" : false,
+            "defaultValue" : false
+        }
+    ]
+}
