@@ -1,7 +1,7 @@
-# Public repository for DSS custom plugins, code and projects for Walmart
+# DSS custom plugins
 
 This repository contains the source code for
-custom  DSS plugins developed for Walmart.
+custom  DSS plugins.
 
 ## How can I create a plugin ?
 
